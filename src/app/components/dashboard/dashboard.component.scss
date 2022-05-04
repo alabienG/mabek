@@ -1,29 +1,6 @@
-$mainColor: white;
-$primary: #1591b0;
-$second: #f5f6fa;
-$iconSecond: #a7a3a3;
-
-@keyframes delay {
-  0% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(90%);
-  }
-  100% {
-    transform: translateX(50%);
-  }
-}
-
-@mixin changeBackground($background,$color) {
-  color: $color;
-  background-color: $background;
-  box-shadow: 1px 1px 1px 1px $background;
-}
-
-@mixin animIcon() {
-  animation: delay 600ms ease-in-out;
-}
+@import "src/assets/css/variables";
+@import "src/assets/css/mixin";
+@import "src/assets/css/keyframes";
 
 section {
   display: flex;
