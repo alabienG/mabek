@@ -1,0 +1,254 @@
+$mainColor: white;
+$primary: #1591b0;
+$second: #f5f6fa;
+$iconSecond: #a7a3a3;
+
+@keyframes delay {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(90%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+@mixin changeBackground($background,$color) {
+  color: $color;
+  background-color: $background;
+  box-shadow: 1px 1px 1px 1px $background;
+}
+
+@mixin animIcon() {
+  animation: delay 600ms ease-in-out;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+
+  & article {
+    background-color: $mainColor;
+    flex: 2;
+    border-radius: 20px;
+    padding: 20px;
+
+    & .hello {
+      border-radius: 20px;
+      box-shadow: 4px 2px 4px 2px $iconSecond;
+      height: 150px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & img {
+        height: 150px;
+      }
+    }
+
+    & .cards {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+      & .first > .card-hearder {
+        color: #e54141;
+      }
+
+      & .second > .card-hearder {
+        color: $primary;
+      }
+
+      & .third > .card-hearder {
+        color: #e7ad44;
+      }
+
+      & :hover {
+        & > .card-hearder {
+          color: $second;
+        }
+
+        &:nth-child(1) {
+          @include changeBackground(#e54141, $second);
+
+          & > .card-hearder {
+            color: $second;
+
+            & i {
+              @include animIcon;
+            }
+          }
+
+          & > .card-body {
+            background-color: #e54141;
+            box-shadow: 1px 1px 1px 1px #e54141;
+          }
+
+          & span {
+            @include changeBackground(#e54141, $second)
+          }
+        }
+
+        &:nth-child(2) {
+          @include changeBackground($primary, $second);
+
+          & > .card-hearder {
+            @include changeBackground($primary, $second);
+
+            & i {
+              @include animIcon;
+            }
+          }
+
+          & > .card-body h4 {
+            @include changeBackground($primary, $second);
+          }
+        }
+
+        &:nth-child(3) {
+
+          @include changeBackground(#e7ad44, $second);
+
+          & > .card-hearder, > .card-hearder i, > .card-body {
+            @include changeBackground(#e7ad44, $second);
+          }
+
+          & .card-hearder i {
+            @include animIcon;
+          }
+
+          & > .card-body h4, span {
+            @include changeBackground(#e7ad44, $second);
+          }
+        }
+
+        &:nth-child(4) {
+          @include changeBackground(black, $second);
+
+          & > .card-hearder, > .card-body, span, h4 {
+            @include changeBackground(black, $second);
+          }
+
+          & .card-hearder i {
+            @include animIcon;
+          }
+        }
+      }
+
+      & .card {
+        text-overflow: ellipsis;
+        width: 20%;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px 1px $iconSecond;
+        padding: 20px;
+
+        & .card-hearder {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px;
+          align-items: center;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+
+
+    }
+
+    & .statistiques {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      align-items: center;
+
+      & .stats {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30%;
+
+        & .stat-card {
+          width: 100%;
+          box-shadow: 1px 1px 1px 2px $second;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          padding: 10px;
+          border-radius: 20px;
+          margin-bottom: 20px;
+          background: $primary;
+          color: $second;
+
+          & i {
+            font-size: 70px;
+            color: $second;
+            text-align: center;
+            padding: 30px;
+          }
+
+          & .stat-infos {
+            margin-right: 2%;
+            text-align: center;
+
+            & p:nth-child(1) {
+              font-weight: bold;
+            }
+
+            & p:nth-child(2) {
+              font-weight: bold;
+              color: $second;
+              font-size: 40px;
+              margin-top: -15px;
+            }
+          }
+        }
+      }
+
+      & .persons {
+        width: 65%;
+        margin-left: 2%;
+        //box-shadow: 1px 1px 1px 2px $iconSecond;
+        border-radius: 20px;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+
+        & .person {
+          box-shadow: 1px 1px 1px $iconSecond;
+          border-radius: 20px;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          margin-left: 2%;
+          width: 20%;
+          color: $primary;
+          font-weight: 800;
+
+          & i {
+            font-size: 70px;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+
+  }
+
+  & aside {
+
+    flex: 1;
+    background-color: $mainColor;
+    margin-left: 1%;
+    //height: $heigth;
+    border-radius: 20px;
+    padding: 20px;
+
+
+  }
+}

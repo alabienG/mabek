@@ -1,0 +1,39 @@
+<div class="content">
+  <header>
+    <ul>
+      <li><a title="Accueil" routerLink="/dashboard" routerLinkActive="active"> <i class="bi bi-house-fill"></i></a>
+      </li>
+      <li><a title="Gestion du personnel" routerLink="/personnels/home" routerLinkActive="active"><i
+        class="bi bi-person-lines-fill"></i></a></li>
+      <li><a><i class="bi bi-card-checklist"></i></a></li>
+      <li><a><i class="bi bi-wallet-fill"></i></a></li>
+      <li><a><i class="bi bi-heart-pulse-fill"></i></a></li>
+      <li><a><i class="bi bi-gear-fill"></i></a></li>
+    </ul>
+    <a class="logout" title="Logout"><i class="bi bi-box-arrow-right"></i></a>
+  </header>
+
+  <main>
+
+    <nav>
+      <form>
+        <div class="search">
+          <i class="bi bi-search"></i>
+          <input type="search" autocomplete="off" placeholder="Search" id="search">
+        </div>
+      </form>
+
+      <div class="left-nav">
+        <i class="bi bi-envelope"></i>
+        <i class="bi bi-bell"></i>
+        <img src="assets/avatar/avatar2.png" width="40px" height="40px">
+      </div>
+    </nav>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+
+

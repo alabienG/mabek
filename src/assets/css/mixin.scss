@@ -1,0 +1,7 @@
+@import "variables";
+@import "keyframes";
+
+@mixin animMemu() {
+
+  animation: animMenu 700ms ease-in-out;
+}

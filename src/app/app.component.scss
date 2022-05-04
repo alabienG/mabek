@@ -1,0 +1,169 @@
+$mainColor: white;
+$primary: #1591b0;
+$second: #f5f6fa;
+$iconSecond: #a7a3a3;
+
+
+@keyframes delay {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(90%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+@mixin changeBackground($background,$color) {
+  color: $color;
+  background-color: $background;
+  box-shadow: 1px 1px 1px 1px $background;
+}
+
+@mixin animIcon() {
+  animation: delay 600ms ease-in-out;
+}
+
+
+.content {
+  padding: 20px;
+  display: flex;
+  height: 100%;
+
+  & header {
+    background-color: $primary;
+    width: 7%;
+    position: relative;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      list-style: none;
+
+      & li:nth-child(1) {
+        //margin-top: 50px;
+      }
+
+      & li {
+        margin-bottom: 20px;
+
+        & .bi {
+          color: white;
+        }
+
+        & a {
+          text-decoration: none;
+          font-size: 30px;
+
+        }
+
+        & a:hover {
+          background-color: $mainColor;
+          padding: 5px;
+          border-radius: 10px;
+        }
+
+
+        & a:hover > .bi {
+          color: $primary;
+        }
+      }
+
+
+    }
+
+    & .logout {
+      font-size: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 70px;
+      margin-left: 35%;
+
+      & .bi {
+        color: $mainColor;
+      }
+    }
+
+
+  }
+
+
+  & main {
+    height: 800px;
+    background-color: $second;
+    width: 98%;
+    position: relative;
+    border-radius: 30px;
+    right: 1.5%;
+    padding: 20px;
+
+  }
+
+  & nav {
+    background-color: $mainColor;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    & .search {
+      background-color: $second;
+      padding: 5px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-left: 1.5%;
+      padding: 5px;
+      font-weight: bold;
+      height: 30px;
+
+      & input {
+        background-color: $second;
+        border: none;
+        height: 30px;
+        margin-left: 2%;
+        outline: none;
+      }
+    }
+
+    & .left-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $iconSecond;
+      font-size: 25px;
+
+      & .bi {
+        margin-right: 7px;
+      }
+    }
+  }
+
+
+}
+
+.active {
+  background-color: $second;
+  color: $primary;
+  padding: 5px;
+  border-radius: 10px;
+
+  & + .bi {
+    color: $primary;
+  }
+
+}
+
+
